@@ -1,6 +1,9 @@
 <template name="appBody">
   <body>
-    <h1>Welcome to Meteor!</h1>
+    <h1>Giftr-Meteor!</h1>
+    {{#if currentUser}}
+    <div>{{ currentUser.profile.name }} (<a id="signout" href="#">sign out</a>)</div>
+    {{/if}}
     {{> yield }}
   </body>
 </template>
