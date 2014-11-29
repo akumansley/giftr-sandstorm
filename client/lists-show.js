@@ -15,14 +15,8 @@ Template.listsShow.events({
         e.preventDefault();
         
         var text = t.$('[name=item-text]').val();
-        var item = {
-            text: text,
-            listId: this._id,
-            createdAt: new Date()
-        };
 
-        // TODO replace this with a method add-item
-        Items.insert(item);
+        Meteor.call('addItem', text, this._id);
         t.$('[name=item-text]').val('');
     },
     "submit .add-comment" : function(e, t) {
@@ -30,17 +24,13 @@ Template.listsShow.events({
         
         var input = $(e.target).find('[name=comment-text]');        
         var text = input.val();
-        var comment = {
-            userId: Meteor.user()._id,
-            text: text,
-            itemId: this._id,
-            listId: this.listId,
-            createdAt: new Date()
-        };
-    
-        // TODO replace this with a method add-item
-        Comments.insert(comment);
+        Meteor.call('addComment', text, this._id);
         input.val('');
-    }
-    
+    },
+    "click .delete-comment": function(e, t) {
+        Meteor.call('deleteComment', this._id);
+    },
+    "click .delete-item": function(e, t) {
+        Meteor.call('deleteItem', this._id);
+    },
 });
