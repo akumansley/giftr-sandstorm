@@ -1,0 +1,48 @@
+<template name="Logup">
+    <ul>
+        <li><a class="login" href="#">login</a></li>
+        <li><a class="signup" href="#">signup</a></li>
+    </ul>
+    {{#if isLogin}}
+        {{> Login}}
+    {{else}}
+        {{> Signup}}
+    {{/if}}
+</template>
+
+<template name="Login">
+    <form id="loginForm">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input name="email" id="email" type="text" placeholder="email address" />
+        </div>
+        <div class="form-group">
+            <label for="pwd">Password</label>
+            <input name="email" id="pwd" type="text" placeholder="email address" />
+        </div>
+        <button>Login</button>
+    </form>
+</template>
+
+<template name="Signup">
+    <form id="signupForm">
+        
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input name="name" id="name" type="text" placeholder="full name" />
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input name="email" id="email" type="text" placeholder="email address" />
+        </div>
+        
+        <div class="form-group">
+            <label for="pwd">Password</label>
+            <input name="email" id="pwd" type="text" placeholder="email address" />
+        </div>
+        <button>Signup</button>
+    </form>
+</template>
+
+            
