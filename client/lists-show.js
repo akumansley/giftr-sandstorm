@@ -3,7 +3,10 @@ Template.listsShow.helpers({
         return Items.find({listId: this._id}, {sort: {createdAt: 1}});
     },
     isUsersList: function (list) {
-        return list.userId == Meteor.user()._id;
+        if (!list || !Meteor.user()) {
+            return false;
+        }
+        return list.userId == Meteor.userId();
     },
     comments: function() {
         return Comments.find({itemId: this._id}, {sort: {createdAt: 1}});

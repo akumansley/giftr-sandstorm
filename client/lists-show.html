@@ -23,7 +23,7 @@
             </form>
             <ul>
                 {{#each comments}}
-                    <li>{{ text }} <a class="delete-comment" href="#">&times;</a></li>
+                    <li>{{ text }} - {{ user.profile.name }} <a class="delete-comment" href="#">&times;</a></li>
                 {{/each}}
             </ul>
             {{/if}}
