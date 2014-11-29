@@ -1,0 +1,33 @@
+<template name="listsShow">
+    <h2>{{ name }}</h2>
+    <a href="{{pathFor 'directory'}}">&larr; back</a>
+    
+    {{#if isUsersList this}}
+    <form id="add-item">
+        <input type="text" name="item-text" />
+        <button>add</button>
+    </form>
+    {{/if}}
+    
+    <ul>
+    {{#each items}}
+        <li><div>{{ text }}</div>
+            
+            {{#if isUsersList ..}}
+            {{else}}
+            <form class="add-comment">
+                <input type="text" name="comment-text" />
+                <button>comment</button>
+            </form>
+            <ul>
+                {{#each comments}}
+                    <li>{{ text }}</li>
+                {{/each}}
+            </ul>
+            {{/if}}
+        </li>
+    {{/each}}
+    </ul>
+</template>
+
+

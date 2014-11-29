@@ -1,3 +1,7 @@
 <template name="Directory">
-    one 2 three
+    <ul>
+    {{#each lists}}
+        <li><a href="{{pathFor 'lists.show'}}">{{name}}</a></li>
+    {{/each}}
+    </ul>
 </template>

@@ -43,3 +43,4 @@ Template.Logup.events({
 		});
 	}
 });
+
