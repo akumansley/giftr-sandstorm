@@ -1,0 +1,28 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 45px;
+}
+
+.box {
+    margin: 0 auto;
+    max-width: 450px;
+}
+
+h1 {      font-size: 18px;
+    line-height:45px;
+    margin:0 auto;
+    padding:0;
+}
+
+h2 {
+    font-size:24px;
+    line-height: 45px;
+    padding:0;
+    margin:0;
+}
+
+.header-row {
+    border-bottom: 1px #999 solid;
+    margin-bottom: 18px;
+}

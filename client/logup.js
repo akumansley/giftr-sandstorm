@@ -6,11 +6,15 @@ Template.Logup.helpers({
 });
 
 Template.Logup.events({
-	"click .signup" : function() {
+	"click #show-signup" : function(e) {
 		Session.set("logupType", "signup");
+		$(".btn-group > button").removeClass("active");
+		$("#show-signup").addClass("active");
 	},
-	"click .login" : function() {
+	"click #show-login" : function(e) {
 		Session.set("logupType", "login");
+		$(".btn-group > button").removeClass("active");
+		$("#show-login").addClass("active");
 	},
 
 	"submit #loginForm" : function(e, t) {

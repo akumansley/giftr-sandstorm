@@ -1,9 +1,18 @@
 <template name="appBody">
   <body>
-    <h1>Giftr-Meteor!</h1>
-    {{#if currentUser}}
-    <div>{{ currentUser.profile.name }} (<a id="signout" href="#">sign out</a>)</div>
-    {{/if}}
-    {{> yield }}
+    <div class="box">
+      <div class="row header-row">
+        <h1 class="pull-left"><i class="fa fa-gift"></i> Giftr</h1>
+        {{#if currentUser}}
+        <div class="pull-right">
+          {{ currentUser.profile.name }} 
+          (<a id="signout" href="#">sign out</a>)
+        </div>
+        {{/if}}
+      </div>
+      <div class="row">
+        {{> yield }}
+      </div>
+    </div>
   </body>
 </template>

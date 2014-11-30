@@ -1,8 +1,9 @@
 <template name="Logup">
-    <ul>
-        <li><a class="login" href="#">login</a></li>
-        <li><a class="signup" href="#">signup</a></li>
-    </ul>
+    
+    <div class="btn-group" role="group">
+      <button type="button" id="show-login" class="btn btn-default active">Log in</button>
+      <button type="button" id="show-signup" class="btn btn-default">Sign up</button>
+    </div>
     {{#if isLogin}}
         {{> Login}}
     {{else}}
@@ -20,7 +21,7 @@
             <label for="pwd">Password</label>
             <input name="pwd" id="pwd" type="password" placeholder="password" />
         </div>
-        <button>Login</button>
+        <button class="btn btn-default">Login</button>
     </form>
 </template>
 
@@ -41,7 +42,7 @@
             <label for="pwd">Password</label>
             <input name="pwd" id="pwd" type="password" placeholder="password" />
         </div>
-        <button>Signup</button>
+        <button class="btn btn-default">Signup</button>
     </form>
 </template>
 

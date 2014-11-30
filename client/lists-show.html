@@ -3,13 +3,13 @@
     <a href="{{pathFor 'directory'}}">&larr; back</a>
     
     {{#if isUsersList this}}
-    <form id="add-item">
+    <form class="form-inline" id="add-item">
         <input type="text" name="item-text" />
-        <button>add</button>
+        <button class="btn btn-default">add</button>
     </form>
     {{/if}}
     
-    <ul>
+    <ul id="list">
     {{#each items}}
         <li><div>{{ text }} 
             {{#if isUsersList ..}}<a class="delete-item" href="#">&times;</a>{{/if}}
@@ -17,9 +17,9 @@
             
             {{#if isUsersList ..}}
             {{else}}
-            <form class="add-comment">
+            <form class="add-comment form-inline">
                 <input type="text" name="comment-text" />
-                <button>comment</button>
+                <button class="btn btn-default">comment</button>
             </form>
             <ul>
                 {{#each comments}}
