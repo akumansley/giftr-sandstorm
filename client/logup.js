@@ -20,7 +20,7 @@ Template.Logup.events({
 	"submit #loginForm" : function(e, t) {
 		e.preventDefault();
 		
-		var email = t.$('[name=email]').val();
+		var email = t.$('[name=email]').val().toLowerCase();
 		var pwd = t.$('[name=pwd]').val();
 
 		Meteor.loginWithPassword(email, pwd, function(err) {
@@ -31,7 +31,7 @@ Template.Logup.events({
 		e.preventDefault();
 		
 		var name = t.$('[name=name]').val();
-		var email = t.$('[name=email]').val();
+		var email = t.$('[name=email]').val().toLowerCase();
     		var pwd = t.$('[name=pwd]').val();
 		
 		// do validation
