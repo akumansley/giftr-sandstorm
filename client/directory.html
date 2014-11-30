@@ -1,7 +1,7 @@
 <template name="Directory">
-    <ul>
+    <div class="list-group">
     {{#each lists}}
-        <li><a href="{{pathFor 'lists.show'}}">{{name}}</a></li>
+        <div class="list-group-item"><a href="{{pathFor 'lists.show'}}">{{name}}</a></div>
     {{/each}}
-    </ul>
+    </div>
 </template>
