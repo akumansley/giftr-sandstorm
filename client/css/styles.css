@@ -4,7 +4,7 @@ body {
     line-height: 45px;
 }
 
-.box {
+.container {
     margin: 0 auto;
     max-width: 450px;
 }
@@ -25,4 +25,29 @@ h2 {
 .header-row {
     border-bottom: 1px #999 solid;
     margin-bottom: 18px;
+}
+
+.list-group {
+    border:1px #ccc solid;
+    border-radius:4px
+}
+
+
+.list-group-item:first-child {
+    border:1px #ccc solid;
+    border-width:0 0 1px 0;
+}
+
+.list-group-item {
+    border-top:0;
+    border:1px #ccc solid;
+    border-width:0 0 1px 0;
+    padding:0 12px;
+}
+
+.list-group-item:last-child {
+    border:0;
+}
+.controls > a {
+    padding:0 5px;
 }

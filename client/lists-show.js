@@ -22,7 +22,7 @@ Template.listsShow.events({
         Meteor.call('addItem', text, this._id);
         t.$('[name=item-text]').val('');
     },
-    "submit .add-comment" : function(e, t) {
+    "submit .add-comment" : function(e) {
         e.preventDefault();
         
         var input = $(e.target).find('[name=comment-text]');        
@@ -30,10 +30,14 @@ Template.listsShow.events({
         Meteor.call('addComment', text, this._id);
         input.val('');
     },
-    "click .delete-comment": function(e, t) {
+    "click .delete-comment": function() {
         Meteor.call('deleteComment', this._id);
     },
-    "click .delete-item": function(e, t) {
+    "click .delete-item": function() {
         Meteor.call('deleteItem', this._id);
     },
 });
+
+Template.listsShow.rendered = function(){
+
+};
