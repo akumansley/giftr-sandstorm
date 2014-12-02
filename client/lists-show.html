@@ -1,14 +1,12 @@
 <template name="listsShow">
-    <h2>{{ name }}</h2>
-    <a href="{{pathFor 'directory'}}">&larr; back</a>
-    
+    <h2>{{ name }}</h2>    
     {{#if isUsersList this}}
     <form class="form-inline" id="add-item">
         <input type="text" name="item-text" />
         <button class="btn btn-default">add</button>
     </form>
     {{/if}}
-    
+    {{#if items}}
     <div id="list" class="list-group">
     {{#each items}}
         <div class="list-group-item clearfix">
@@ -33,6 +31,7 @@
         </div>
     {{/each}}
     </div>
+    {{/if}}
 </template>
 
 

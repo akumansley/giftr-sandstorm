@@ -2,9 +2,9 @@
   <body>
     <div class="container">
       <div class="row header-row">
-        <h1 class="pull-left"><i class="fa fa-gift"></i> Giftr</h1>
+        <h1 class="pull-left"><a href="{{pathFor 'directory'}}"><i class="fa fa-gift"></i> Giftr</a></h1>
         {{#if currentUser}}
-        <div class="pull-right">
+        <div class="pull-right identity">
           {{ currentUser.profile.name }} 
           (<a id="signout" href="#">sign out</a>)
         </div>
