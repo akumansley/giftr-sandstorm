@@ -17,11 +17,15 @@ h1 {      font-size: 18px;
 }
 
 h1 a {
-    color:inherit;
+    color:#000;
     text-decoration: none;
 }
 h1 a:hover {
-    color:inherit;
+    color:#000;
+    text-decoration: none;
+}
+h1 a:focus {
+    color:#000;
     text-decoration: none;
 }
 
@@ -33,7 +37,7 @@ h2 {
 }
 
 .header-row {
-    margin: 4px 0;
+    margin-top:10px;
 }
 
 .list-group {
