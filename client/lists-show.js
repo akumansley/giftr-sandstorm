@@ -8,8 +8,14 @@ Template.listsShow.helpers({
         }
         return list.userId == Meteor.userId();
     },
-    comments: function() {
+    comments: function () {
         return Comments.find({itemId: this._id}, {sort: {createdAt: 1}});
+    },
+    isUsersComment: function (comment) {
+        if (!comment || !Meteor.user()) {
+            return false;
+        }
+        return comment.userId == Meteor.userId();
     }
 });
 

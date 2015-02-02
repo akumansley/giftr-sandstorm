@@ -24,7 +24,8 @@
                 </form>
                 <ul>
                     {{#each comments}}
-                        <li>{{ text }} - {{ user.profile.name }} <a class="delete-comment" href="#">&times;</a></li>
+                        <li>{{ text }} - {{ user.profile.name }} {{#if isUsersComment this}}<a class="delete-comment" href="#">&times;</a>{{/if}}</li>
+                        
                     {{/each}}
                 </ul>
                 {{/if}}
