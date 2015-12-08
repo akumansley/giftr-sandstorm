@@ -2,17 +2,16 @@
   <body>
     <div class="container">
       <div class="row header-row">
-        <h1 class="pull-left"><a href="{{pathFor 'directory'}}"><i class="fa fa-gift"></i> Giftr</a></h1>
-        {{#if currentUser}}
-        <div class="pull-right identity">
-          {{ currentUser.profile.name }} 
-          (<a id="signout" href="#">sign out</a>)
+        <div class="col-md-12">
+          <h1><i class="fa fa-gift"></i> <a href="{{pathFor 'directory'}}">Giftr</a>
+            {{#if pageName}}
+              <i class="fa fa-angle-right breadcrumb-chevron"></i>
+              <a class="breadcrumb-page" href="{{ currentPath }}">{{ pageName }}</a>
+            {{/if}}
+          </h1>
         </div>
-        {{/if}}
       </div>
-      <div class="row">
-        {{> yield }}
-      </div>
+      {{> yield }}
     </div>
   </body>
 </template>

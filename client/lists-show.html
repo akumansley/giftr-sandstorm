@@ -1,40 +1,46 @@
 <template name="listsShow">
-    <h2>{{ name }}</h2>    
-    {{#if isUsersList this}}
-    <form class="form-inline" id="add-item">
-        <input type="text" name="item-text" />
-        <button class="btn btn-default">add</button>
-    </form>
-    {{/if}}
-    {{#if items.count}}
-    <div id="list" class="list-group">
-        {{#each items}}
-            <div class="list-group-item clearfix">
-                {{ text }}
-                {{#if isUsersList ..}}
-                <div class="pull-right controls">
-                    <a class="delete-item" href="#">
-                        <i class="fa fa-remove"></i>
-                    </a>
-                </div>
-                {{else}}
-                <form class="add-comment form-inline">
-                    <input type="text" name="comment-text" />
-                    <button class="btn btn-default">comment</button>
-                </form>
-                <ul>
-                    {{#each comments}}
-                        <li>{{ text }} - {{ user.profile.name }} {{#if isUsersComment this}}<a class="delete-comment" href="#">&times;</a>{{/if}}</li>
-                        
-                    {{/each}}
-                </ul>
-                {{/if}}
-            </div>
-        {{/each}}
+  <div class="row padded-row">
+    <div class="col-md-12">
+      <a href="{{ pathFor 'directory' }}">&larr; back</a>
     </div>
-    {{else}}
-    <div>Nothing here yet!</div>
-    {{/if}}
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      {{#if isUsersList this}}
+      <form class="form-inline" id="add-item">
+          <input type="text" name="item-text" />
+          <button class="btn btn-default">add</button>
+      </form>
+      {{/if}}
+      {{#if items.count}}
+      <div id="list" class="list-group">
+          {{#each items}}
+              <div class="list-group-item clearfix">
+                  {{ text }}
+                  {{#if isUsersList ..}}
+                  <div class="pull-right controls">
+                      <a class="delete-item" href="#">
+                          <i class="fa fa-remove"></i>
+                      </a>
+                  </div>
+                  {{else}}
+                  <form class="add-comment form-inline">
+                      <input type="text" name="comment-text" />
+                      <button class="btn btn-default">comment</button>
+                  </form>
+                  <ul>
+                      {{#each comments}}
+                          <li>{{ text }} - {{ user.profile.name }} {{#if isUsersComment this}}<a class="delete-comment" href="#">&times;</a>{{/if}}</li>
+
+                      {{/each}}
+                  </ul>
+                  {{/if}}
+              </div>
+          {{/each}}
+      </div>
+      {{else}}
+      <div>Nothing here yet!</div>
+      {{/if}}
+    </div>
+  </div>
 </template>
-
-

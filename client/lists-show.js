@@ -19,10 +19,18 @@ Template.listsShow.helpers({
     }
 });
 
+Template.listsShow.onCreated(function () {
+  Session.set('pageName', this.data.name);
+});
+
+Template.listsShow.onDestroyed(function () {
+  Session.set('pageName', null);
+});
+
 Template.listsShow.events({
     "submit #add-item" : function(e, t) {
         e.preventDefault();
-        
+
         var text = t.$('[name=item-text]').val();
 
         Meteor.call('addItem', text, this._id);
@@ -30,8 +38,8 @@ Template.listsShow.events({
     },
     "submit .add-comment" : function(e) {
         e.preventDefault();
-        
-        var input = $(e.target).find('[name=comment-text]');        
+
+        var input = $(e.target).find('[name=comment-text]');
         var text = input.val();
         Meteor.call('addComment', text, this._id);
         input.val('');

@@ -1,7 +1,26 @@
 <template name="Directory">
+  <div class="row">
+    <div class="col-md-12">
+    <p class="quiet">
+      Make your gift list! Other folks can comment and coordinate, but you won't see it. <a href="{{pathFor 'about'}}">Learn More</a>
+    </p>
+  </div>
+  </div>
+    {{#unless userHasList }}
+    <div class="row padded-row">
+      <div class="col-md-12">
+        <button id="make-list" class="btn btn-default btn-strong">
+          <i class="fa fa-plus-circle"></i> Add your list
+        </button>
+      </div>
+    </div>
+    {{/unless}}
+    <div class="row">
+      <div class="col-md-12">
     <div class="list-group">
     {{#each lists}}
         <div class="list-group-item"><a href="{{pathFor 'lists.show'}}">{{name}}</a></div>
     {{/each}}
     </div>
+  </div></div>
 </template>
