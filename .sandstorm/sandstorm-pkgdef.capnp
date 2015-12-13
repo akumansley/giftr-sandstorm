@@ -48,9 +48,9 @@ const pkgdef :Spk.PackageDefinition = (
       # https://github.com/sandstorm-io/sandstorm/blob/master/src/sandstorm/package.capnp
       icons = (
         # Various icons to represent the app in various contexts.
-        appGrid = (svg = embed "sandstorm-assets/appGrid.svg"),
-        grain = (svg = embed "sandstorm-assets/grain.svg"),
-        market = (svg = embed "sandstorm-assets/market.svg")
+        appGrid = (svg = embed "../sandstorm-assets/appGrid.svg"),
+        grain = (svg = embed "../sandstorm-assets/grain.svg"),
+        market = (svg = embed "../sandstorm-assets/market.svg")
       ),
 
       website = "https://awans.org/giftr.html",
@@ -77,7 +77,7 @@ const pkgdef :Spk.PackageDefinition = (
         # requests as well as app store administrator requests, so it is very important that this be a
         # valid address with someone paying attention to it.
 
-        pgpSignature = embed "sandstorm-assets/identity-proof-signed.txt",
+        pgpSignature = embed "../sandstorm-assets/identity-proof-signed.txt",
         # PGP signature attesting responsibility for the app ID. This is a binary-format detached
         # signature of the following ASCII message (not including the quotes, no newlines, and
         # replacing <app-id> with the standard base-32 text format of the app's ID):
@@ -98,7 +98,7 @@ const pkgdef :Spk.PackageDefinition = (
         # Remove this line if you consider yourself as the author of the app.
       ),
 
-      #pgpKeyring = embed "path/to/pgp-keyring",
+      pgpKeyring = embed "../sandstorm-assets/keyring",
       # A keyring in GPG keyring format containing all public keys needed to verify PGP signatures in
       # this manifest (as of this writing, there is only one: `author.pgpSignature`).
       #
@@ -108,7 +108,7 @@ const pkgdef :Spk.PackageDefinition = (
       #
       # Where `<key-id>` is a PGP key ID or email address associated with the key.
 
-      description = (defaultText = embed "sandstorm-assets/appstore-description.md"),
+      description = (defaultText = embed "../sandstorm-assets/appstore-description.md"),
       # The app's description description in Github-flavored Markdown format, to be displayed e.g.
       # in an app store. Note that the Markdown is not permitted to contain HTML nor image tags (but
       # you can include a list of screenshots separately).
@@ -126,7 +126,7 @@ const pkgdef :Spk.PackageDefinition = (
         #(width = 746, height = 795, jpeg = embed "path/to/screenshot-1.jpeg"),
         #(width = 640, height = 480, png = embed "path/to/screenshot-2.png"),
       ],
-      changeLog = (defaultText = embed "sandstorm-assets/changelog.md"),
+      changeLog = (defaultText = embed "../sandstorm-assets/changelog.md"),
       # Documents the history of changes in Github-flavored markdown format (with the same restrictions
       # as govern `description`). We recommend formatting this with an H1 heading for each version
       # followed by a bullet list of changes.
