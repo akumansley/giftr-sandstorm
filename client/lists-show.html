@@ -8,7 +8,9 @@
     <div class="col-md-12">
       {{#if isUsersList this}}
       <form class="form-inline" id="add-item">
-          <input type="text" name="item-text" />
+          <input type="text" placeholder="Name" name="item-text" />
+          <br />
+          <input type="text" placeholder="URL (optional)" name="item-url" />
           <button class="btn btn-default">add</button>
       </form>
       {{/if}}
@@ -17,6 +19,9 @@
           {{#each items}}
               <div class="list-group-item clearfix">
                   {{ text }}
+                  {{#if url}}
+                  (<a href="{{url}}">Link</a>)
+                  {{/if}}
                   {{#if isUsersList ..}}
                   <div class="pull-right controls">
                       <a class="delete-item" href="#">
