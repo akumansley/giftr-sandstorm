@@ -7,14 +7,24 @@
   <div class="row">
     <div class="col-md-12">
       {{#if isUsersList this}}
-      <form class="form-inline" id="add-item">
-          <input type="text" placeholder="Name" name="item-text" />
-          <br />
+      <form class="form" id="add-item">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Name" name="item-text" />
+        </div>
+        <div class="input-group">
           <input type="text" placeholder="URL (optional)" name="item-url" />
-          <button class="btn btn-default">add</button>
+        </div>
+        {{#if errors.length }}
+          {{#each errors}}
+          <div class="errors">
+            {{ message }}
+          </div>
+          {{/each}}
+        {{/if}}
+        <button class="btn btn-default">Add</button>
       </form>
       {{/if}}
-      {{#if items.count}}
+      {{#if items.count }}
       <div id="list" class="list-group">
           {{#each items}}
               <div class="list-group-item clearfix">

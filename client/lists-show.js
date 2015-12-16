@@ -7,8 +7,11 @@ function isValidUrl(url) {
 }
 
 Template.listsShow.helpers({
-    items: function() {
+    items: function () {
         return Items.find({listId: this._id}, {sort: {createdAt: 1}});
+    },
+    errors: function () {
+      return Session.get('create_errors');
     },
     isUsersList: function (list) {
         if (!list || !Meteor.user()) {
@@ -48,13 +51,18 @@ Template.listsShow.events({
         // 1. Require a name for gift
         // 2. If URL provided, ensure it is a real address
         if (!item.text) {
-            alert("Please enter a gift name");
-            return false;
+          Session.set('create_errors', [{
+            message: "Please enter a gift name"
+          }]);
+          return false;
         }
         if (item.url && !isValidUrl(item.url)) {
-            alert("Please provide a valid URL");
-            return false;
+          Session.set('create_errors', [{
+            message: "Please provide a valid URL"
+          }]);
+          return false;
         }
+        Session.set('create_errors', []);
 
         Meteor.call('addItem', item, this._id);
         t.$('[name=item-text]').val('');

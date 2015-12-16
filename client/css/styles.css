@@ -86,3 +86,11 @@ h2 {
 .btn-strong {
   font-weight: bold;
 }
+
+.errors {
+  background: #fee;
+  padding: 4px 8px;
+  border: 1px solid #fcc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
